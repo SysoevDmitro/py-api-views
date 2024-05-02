@@ -37,7 +37,6 @@ class GenreDetail(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, pk):
-        genres = self.get_object(pk)
         serializer = GenreSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
@@ -45,7 +44,6 @@ class GenreDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def patch(self, request, pk):
-        genres = self.get_object(pk)
         serializer = GenreSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
