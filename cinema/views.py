@@ -45,7 +45,7 @@ class GenreDetail(APIView):
 
     def patch(self, request, pk):
         serializer = GenreSerializer(data=request.data)
-        erializer.is_valid(raise_exception=True)
+        serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
 
