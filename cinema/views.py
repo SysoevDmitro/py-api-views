@@ -46,8 +46,8 @@ class GenreDetail(APIView):
     def patch(self, request, pk):
         serializer = GenreSerializer(data=request.data)
         raise_exception=True
-            serializer.save()
-            return Response(serializer.data)
+        serializer.save()
+        return Response(serializer.data)
 
     def delete(self, request, pk):
         genres = self.get_object(pk)
